@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI/ML Engineer Portfolio of Anurag Tiwari">
-    <meta name="author" content="Anurag Tiwari">
-    <title>Anurag Tiwari - AI/ML Visionary</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&family=Exo+2:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <title>Anurag Tiwari - AI/ML Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         * {
@@ -16,55 +14,47 @@
         }
 
         :root {
-            --primary-glow: #00D9FF;
-            --secondary-glow: #FF2E97;
-            --accent-glow: #7B2EFF;
-            --success-glow: #00FF88;
-            --warning-glow: #FFB800;
-            --dark-bg: #000000;
-            --dark-surface: #0A0E1A;
-            --darker-surface: #050810;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B4B8C5;
+            /* Sophisticated, intentional palette */
+            --primary: #2D5F5D;        /* Deep teal - professional, trustworthy */
+            --accent: #E87461;          /* Warm coral - energetic, approachable */
+            --highlight: #F4B860;       /* Golden amber - success, achievement */
+            --neutral-dark: #1A1D23;    /* Charcoal - modern, clean */
+            --neutral-mid: #2C3038;     /* Slate gray - depth */
+            --neutral-light: #E8EBF0;   /* Off-white - softer than pure white */
+            --text-primary: #F5F7FA;    /* Soft white */
+            --text-secondary: #A8B0C1;  /* Muted blue-gray */
+            --success: #5BA88A;         /* Sage green - growth */
+            --gradient-1: linear-gradient(135deg, #2D5F5D 0%, #4A7C7A 100%);
+            --gradient-2: linear-gradient(135deg, #E87461 0%, #F09279 100%);
+            --gradient-3: linear-gradient(135deg, #2D5F5D 0%, #E87461 100%);
         }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background: var(--dark-bg);
+            font-family: 'Inter', sans-serif;
+            background: var(--neutral-dark);
             color: var(--text-primary);
             overflow-x: hidden;
             cursor: none;
         }
 
-        /* Advanced Custom Cursor */
-        .cursor-glow {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease;
-        }
-
+        /* Custom Cursor */
         .cursor-dot {
             position: fixed;
-            width: 8px;
-            height: 8px;
-            background: var(--primary-glow);
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px var(--primary-glow);
+            transition: all 0.1s ease;
         }
 
         .cursor-ring {
             position: fixed;
-            width: 30px;
-            height: 30px;
-            border: 2px solid var(--primary-glow);
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -97,20 +87,20 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(26, 29, 35, 0.95) 0%, transparent 100%);
             backdrop-filter: blur(20px);
         }
 
         .logo {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.6));
-            letter-spacing: 2px;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
         }
 
         .nav-menu {
@@ -122,10 +112,9 @@
         .nav-menu a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -137,7 +126,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
@@ -162,7 +151,7 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
             max-width: 1600px;
             width: 100%;
@@ -175,54 +164,47 @@
         @keyframes fadeSlideIn {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
 
         .hero-tag {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: rgba(0, 217, 255, 0.1);
-            border: 2px solid var(--primary-glow);
+            padding: 0.6rem 1.2rem;
+            background: rgba(45, 95, 93, 0.15);
+            border: 1.5px solid var(--primary);
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--primary-glow);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             margin-bottom: 2rem;
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
-            }
         }
 
         .hero h1 {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 5.5rem;
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #FFFFFF, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
+            color: var(--text-primary);
             letter-spacing: -2px;
         }
 
+        .hero h1 .highlight {
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .hero-description {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             color: var(--text-secondary);
             margin-bottom: 3rem;
@@ -230,13 +212,13 @@
         }
 
         .hero-description strong {
-            color: var(--primary-glow);
-            font-weight: 700;
+            color: var(--accent);
+            font-weight: 600;
         }
 
-        /* Interactive 3D Card */
+        /* Interactive Visual Card */
         .hero-visual {
-            perspective: 1000px;
+            perspective: 1500px;
             animation: fadeSlideIn 1s ease-out 0.3s both;
         }
 
@@ -244,9 +226,9 @@
             position: relative;
             width: 100%;
             height: 500px;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(255, 46, 151, 0.05));
-            border: 2px solid rgba(0, 217, 255, 0.3);
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(45, 95, 93, 0.08), rgba(232, 116, 97, 0.08));
+            border: 2px solid rgba(45, 95, 93, 0.3);
+            border-radius: 24px;
             transform-style: preserve-3d;
             transition: transform 0.3s ease;
             display: flex;
@@ -262,8 +244,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(0, 217, 255, 0.1), transparent);
-            animation: shimmer 3s linear infinite;
+            background: linear-gradient(45deg, transparent, rgba(45, 95, 93, 0.1), transparent);
+            animation: shimmer 4s linear infinite;
         }
 
         @keyframes shimmer {
@@ -280,9 +262,9 @@
         }
 
         .stat-item {
-            background: rgba(10, 14, 26, 0.8);
-            border: 2px solid var(--primary-glow);
-            border-radius: 15px;
+            background: rgba(26, 29, 35, 0.85);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
             padding: 2rem;
             text-align: center;
             backdrop-filter: blur(10px);
@@ -290,19 +272,16 @@
         }
 
         .stat-item:hover {
-            transform: scale(1.1);
-            border-color: var(--secondary-glow);
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.4);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(45, 95, 93, 0.3);
         }
 
         .stat-value {
-            font-family: 'Exo 2', sans-serif;
+            font-family: 'Syne', sans-serif;
             font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-glow), var(--success-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 800;
+            color: var(--accent);
             display: block;
             margin-bottom: 0.5rem;
         }
@@ -310,8 +289,7 @@
         .stat-label {
             font-size: 0.9rem;
             color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 500;
         }
 
         /* CTA Buttons */
@@ -320,56 +298,38 @@
             gap: 1.5rem;
         }
 
-        .btn-glow {
-            padding: 1.25rem 3rem;
-            font-family: 'Exo 2', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
+        .btn {
+            padding: 1.2rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
-            border: 2px solid;
-            border-radius: 50px;
-            position: relative;
-            overflow: hidden;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            letter-spacing: 1px;
+            letter-spacing: 0.3px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
-            border-color: var(--primary-glow);
-            color: var(--dark-bg);
+            background: var(--gradient-1);
+            color: var(--text-primary);
+            border: 2px solid transparent;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(45, 95, 93, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            border-color: var(--primary-glow);
-            color: var(--primary-glow);
-        }
-
-        .btn-secondary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
-            transition: left 0.3s ease;
-            z-index: -1;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
         .btn-secondary:hover {
-            color: var(--dark-bg);
-        }
-
-        .btn-secondary:hover::before {
-            left: 0;
+            background: var(--primary);
+            color: var(--text-primary);
+            transform: translateY(-3px);
         }
 
         /* Section Styling */
@@ -384,30 +344,27 @@
         }
 
         .section-subtitle {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--primary-glow);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
         }
 
         .section-title {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--text-primary), var(--primary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
         .section-description {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
             line-height: 1.8;
         }
@@ -445,8 +402,8 @@
         .project-visual {
             position: relative;
             height: 400px;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(255, 46, 151, 0.05));
-            border: 2px solid rgba(0, 217, 255, 0.3);
+            background: linear-gradient(135deg, rgba(45, 95, 93, 0.08), rgba(232, 116, 97, 0.08));
+            border: 2px solid rgba(45, 95, 93, 0.3);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -454,23 +411,8 @@
 
         .project-visual:hover {
             transform: scale(1.02);
-            border-color: var(--secondary-glow);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
-        }
-
-        .project-visual::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .project-visual:hover::before {
-            left: 100%;
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(45, 95, 93, 0.2);
         }
 
         .project-icon {
@@ -479,7 +421,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 8rem;
-            opacity: 0.3;
+            opacity: 0.2;
         }
 
         .project-badges {
@@ -493,11 +435,9 @@
 
         .badge {
             padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.8rem;
+            font-weight: 600;
             border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             backdrop-filter: blur(10px);
             display: inline-flex;
             align-items: center;
@@ -505,21 +445,21 @@
         }
 
         .badge-live {
-            background: rgba(0, 255, 136, 0.2);
-            border: 2px solid var(--success-glow);
-            color: var(--success-glow);
+            background: rgba(91, 168, 138, 0.2);
+            border: 2px solid var(--success);
+            color: var(--success);
         }
 
         .badge-featured {
-            background: rgba(255, 184, 0, 0.2);
-            border: 2px solid var(--warning-glow);
-            color: var(--warning-glow);
+            background: rgba(244, 184, 96, 0.2);
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
         }
 
         .pulse-indicator {
             width: 8px;
             height: 8px;
-            background: var(--success-glow);
+            background: var(--success);
             border-radius: 50%;
             animation: pulsate 2s ease-in-out infinite;
         }
@@ -536,16 +476,16 @@
         }
 
         .project-content h3 {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 1rem;
-            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .project-content p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
             color: var(--text-secondary);
             margin-bottom: 2rem;
@@ -559,8 +499,8 @@
         }
 
         .metric-card {
-            background: rgba(10, 14, 26, 0.6);
-            border: 2px solid rgba(0, 217, 255, 0.3);
+            background: rgba(26, 29, 35, 0.6);
+            border: 2px solid rgba(45, 95, 93, 0.3);
             border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
@@ -568,16 +508,15 @@
         }
 
         .metric-card:hover {
-            border-color: var(--primary-glow);
+            border-color: var(--primary);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
         }
 
         .metric-number {
-            font-family: 'Exo 2', sans-serif;
+            font-family: 'Syne', sans-serif;
             font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary-glow);
+            font-weight: 700;
+            color: var(--accent);
             display: block;
             margin-bottom: 0.5rem;
         }
@@ -585,7 +524,6 @@
         .metric-text {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            text-transform: uppercase;
         }
 
         .tech-tags {
@@ -597,19 +535,18 @@
 
         .tech-tag {
             padding: 0.5rem 1.25rem;
-            background: rgba(123, 46, 255, 0.1);
-            border: 2px solid var(--accent-glow);
-            border-radius: 50px;
-            color: var(--accent-glow);
-            font-size: 0.9rem;
+            background: rgba(45, 95, 93, 0.15);
+            border: 1.5px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
             font-weight: 600;
-            text-transform: uppercase;
             transition: all 0.3s ease;
         }
 
         .tech-tag:hover {
-            background: var(--accent-glow);
-            color: var(--dark-bg);
+            background: var(--primary);
+            color: var(--text-primary);
             transform: translateY(-3px);
         }
 
@@ -619,20 +556,146 @@
         }
 
         .link-btn {
-            padding: 1rem 2rem;
+            padding: 0.9rem 1.8rem;
             background: transparent;
-            border: 2px solid var(--primary-glow);
-            border-radius: 50px;
-            color: var(--primary-glow);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
 
         .link-btn:hover {
-            background: var(--primary-glow);
-            color: var(--dark-bg);
+            background: var(--primary);
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: rgba(26, 29, 35, 0.6);
+            border: 2px solid rgba(45, 95, 93, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-3);
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(45, 95, 93, 0.2);
+        }
+
+        .cert-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .cert-date {
+            padding: 0.4rem 0.9rem;
+            background: rgba(232, 116, 97, 0.15);
+            border: 1.5px solid var(--accent);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .cert-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .cert-issuer {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .cert-skill {
+            padding: 0.4rem 0.9rem;
+            background: rgba(45, 95, 93, 0.15);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cert-link:hover {
+            color: var(--accent);
             transform: translateX(5px);
         }
 
@@ -646,8 +709,8 @@
         }
 
         .blog-card {
-            background: rgba(10, 14, 26, 0.6);
-            border: 2px solid rgba(0, 217, 255, 0.3);
+            background: rgba(26, 29, 35, 0.6);
+            border: 2px solid rgba(45, 95, 93, 0.3);
             border-radius: 20px;
             padding: 3rem;
             transition: all 0.4s ease;
@@ -661,9 +724,9 @@
         }
 
         .blog-card:hover {
-            border-color: var(--secondary-glow);
+            border-color: var(--accent);
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(45, 95, 93, 0.2);
         }
 
         .blog-meta {
@@ -675,27 +738,30 @@
 
         .blog-category {
             padding: 0.5rem 1rem;
-            background: rgba(0, 217, 255, 0.2);
-            border: 2px solid var(--primary-glow);
+            background: rgba(45, 95, 93, 0.2);
+            border: 1.5px solid var(--primary);
             border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--primary-glow);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .blog-date {
             font-size: 0.9rem;
             color: var(--text-secondary);
+            font-weight: 500;
         }
 
         .blog-card h3 {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 1.5rem;
             line-height: 1.3;
+            letter-spacing: -0.5px;
         }
 
         .blog-excerpt {
@@ -712,8 +778,8 @@
         }
 
         .blog-content h4 {
-            color: var(--primary-glow);
-            font-size: 1.3rem;
+            color: var(--accent);
+            font-size: 1.2rem;
             margin: 1.5rem 0 1rem;
             font-weight: 700;
         }
@@ -728,27 +794,8 @@
         }
 
         .blog-content strong {
-            color: var(--primary-glow);
-            font-weight: 700;
-        }
-
-        .read-more {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: transparent;
-            border: 2px solid var(--primary-glow);
-            border-radius: 50px;
-            color: var(--primary-glow);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            background: var(--primary-glow);
-            color: var(--dark-bg);
+            color: var(--accent);
+            font-weight: 600;
         }
 
         /* Skills Section */
@@ -761,13 +808,13 @@
         }
 
         .skill-box {
-            background: rgba(10, 14, 26, 0.6);
-            border: 2px solid rgba(0, 217, 255, 0.3);
+            background: rgba(26, 29, 35, 0.6);
+            border: 2px solid rgba(45, 95, 93, 0.3);
             border-radius: 20px;
             padding: 2.5rem;
             transition: all 0.3s ease;
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95);
         }
 
         .skill-box.visible {
@@ -776,18 +823,18 @@
         }
 
         .skill-box:hover {
-            border-color: var(--secondary-glow);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.3);
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(45, 95, 93, 0.2);
         }
 
         .skill-box h3 {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--primary-glow);
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
+            letter-spacing: -0.3px;
         }
 
         .skill-items {
@@ -798,18 +845,18 @@
 
         .skill-pill {
             padding: 1rem 1.5rem;
-            background: rgba(0, 217, 255, 0.05);
-            border-left: 4px solid var(--primary-glow);
+            background: rgba(45, 95, 93, 0.08);
+            border-left: 3px solid var(--primary);
             border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 500;
             color: var(--text-primary);
             transition: all 0.3s ease;
         }
 
         .skill-pill:hover {
-            background: rgba(0, 217, 255, 0.15);
-            border-left-color: var(--secondary-glow);
+            background: rgba(45, 95, 93, 0.15);
+            border-left-color: var(--accent);
             transform: translateX(10px);
         }
 
@@ -825,19 +872,16 @@
         }
 
         .contact-intro h2 {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
         .contact-intro p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto;
@@ -851,8 +895,8 @@
         }
 
         .contact-card {
-            background: rgba(10, 14, 26, 0.6);
-            border: 2px solid rgba(0, 217, 255, 0.3);
+            background: rgba(26, 29, 35, 0.6);
+            border: 2px solid rgba(45, 95, 93, 0.3);
             border-radius: 20px;
             padding: 3rem;
             text-decoration: none;
@@ -865,27 +909,26 @@
         }
 
         .contact-card:hover {
-            border-color: var(--primary-glow);
+            border-color: var(--accent);
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 20px 50px rgba(45, 95, 93, 0.2);
         }
 
         .contact-icon {
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
 
         .contact-info h4 {
-            font-family: 'Exo 2', sans-serif;
-            font-size: 1.2rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: var(--primary-glow);
-            text-transform: uppercase;
+            color: var(--accent);
             margin-bottom: 0.5rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .contact-info p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
         }
 
@@ -893,13 +936,13 @@
         footer {
             padding: 3rem 5%;
             text-align: center;
-            border-top: 2px solid rgba(0, 217, 255, 0.2);
-            background: rgba(5, 8, 16, 0.8);
+            border-top: 2px solid rgba(45, 95, 93, 0.2);
+            background: rgba(26, 29, 35, 0.8);
         }
 
         footer p {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* Responsive Design */
@@ -919,7 +962,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .blog-grid {
+            .blog-grid,
+            .certifications-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -953,24 +997,15 @@
             section {
                 padding: 4rem 5%;
             }
-        }
 
-        /* Scroll Animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Advanced Cursors -->
-    <div class="cursor-glow"></div>
+    <!-- Custom Cursors -->
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
 
@@ -980,10 +1015,11 @@
     <div class="content-wrapper">
         <!-- Navigation -->
         <nav>
-            <div class="logo">ANURAG TIWARI</div>
+            <div class="logo">Anurag <span>Tiwari</span></div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#blog">Insights</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Connect</a></li>
@@ -994,16 +1030,19 @@
         <section class="hero" id="home">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-tag">AI/ML Engineer & Innovator</div>
-                    <h1>Transforming<br>Ideas Into<br>Intelligence</h1>
+                    <div class="hero-tag">AI/ML Engineer</div>
+                    <h1>
+                        Building Intelligence,<br>
+                        <span class="highlight">Solving Problems</span>
+                    </h1>
                     <p class="hero-description">
-                        Computer Science student at NIET with a passion for building <strong>production-grade AI systems</strong> 
-                        that solve real-world problems. Ranked <strong>Top 35 globally</strong> among 6000+ teams in 
-                        the Vultr Cloud Hackathon.
+                        Computer Science student at NIET specializing in <strong>production-grade AI systems</strong>. 
+                        Ranked <strong>Top 35 globally</strong> among 6000+ teams in the Vultr Cloud Hackathon, 
+                        with expertise in deep learning, NLP, and full-stack ML deployment.
                     </p>
                     <div class="cta-group">
-                        <a href="#projects" class="btn-glow btn-primary">Explore Projects</a>
-                        <a href="#blog" class="btn-glow btn-secondary">Read Insights</a>
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
 
@@ -1194,6 +1233,68 @@
             </div>
         </section>
 
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="section-header">
+                <div class="section-subtitle">Professional Development</div>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-description">
+                    Continuous learning through industry-recognized certifications from leading technology companies 
+                    and educational platforms.
+                </p>
+            </div>
+
+            <div class="certifications-grid">
+                <!-- Certification 1 -->
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">🤖</div>
+                        <div class="cert-date">Sept - Oct 2024</div>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Deep Learning for Developers</h3>
+                        <div class="cert-issuer">Infosys</div>
+                        <p class="cert-description">
+                            Acquired comprehensive expertise in designing, training, and evaluating deep neural networks 
+                            for complex data-driven applications. Gained hands-on experience implementing production-grade 
+                            AI models with focus on real-world deployment, optimization strategies, and performance tuning.
+                        </p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Neural Networks</span>
+                            <span class="cert-skill">Model Optimization</span>
+                            <span class="cert-skill">Production Deployment</span>
+                            <span class="cert-skill">Deep Learning</span>
+                        </div>
+                        <a href="#" class="cert-link">View Certificate →</a>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">🐍</div>
+                        <div class="cert-date">Apr - May 2023</div>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Python for Data Science, AI & Development</h3>
+                        <div class="cert-issuer">IBM</div>
+                        <p class="cert-description">
+                            Mastered fundamental Python programming including control flow, loops, functions, and data 
+                            structures. Developed strong foundation in procedural programming paradigms and logical 
+                            concepts essential for AI/ML development and data manipulation.
+                        </p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Python Programming</span>
+                            <span class="cert-skill">Data Structures</span>
+                            <span class="cert-skill">AI Development</span>
+                            <span class="cert-skill">Data Science</span>
+                        </div>
+                        <a href="#" class="cert-link">View Certificate →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Blog/Insights Section -->
         <section id="blog">
             <div class="section-header">
@@ -1212,48 +1313,37 @@
                         <span class="blog-category">Healthcare AI</span>
                         <span class="blog-date">September 2024</span>
                     </div>
-                    <h3>Why I Built an AI Medical Imaging System: Bridging Technology and Healthcare</h3>
+                    <h3>Why I Built an AI Medical Imaging System</h3>
                     <p class="blog-excerpt">
                         The intersection of AI and healthcare represents one of the most impactful applications 
-                        of machine learning. Here's why I chose pneumonia detection as my entry point into 
-                        medical AI.
+                        of machine learning. Here's why I chose pneumonia detection as my entry point.
                     </p>
                     <div class="blog-content">
                         <h4>The Problem Space</h4>
                         <p>
                             Pneumonia affects millions globally, with diagnosis speed being critical for patient 
                             outcomes. Traditional radiological diagnosis requires specialized expertise and time—both 
-                            of which are scarce in resource-constrained healthcare settings. <strong>I wanted to build 
+                            of which are scarce in resource-constrained settings. <strong>I wanted to build 
                             something that could genuinely save lives</strong>, not just demonstrate technical capability.
                         </p>
 
                         <h4>Technical Decisions</h4>
                         <ul>
-                            <li><strong>CNN Architecture:</strong> Chose convolutional neural networks for their proven 
-                            effectiveness in image classification tasks, particularly medical imaging where spatial 
-                            hierarchies matter.</li>
-                            <li><strong>TensorFlow over PyTorch:</strong> Selected for its superior deployment ecosystem 
-                            and production-grade tooling, essential for healthcare applications.</li>
-                            <li><strong>Vultr Cloud Deployment:</strong> Prioritized low-latency inference (<500ms) over 
-                            cost, as real-time diagnosis is critical in emergency scenarios.</li>
-                            <li><strong>Image Augmentation:</strong> Implemented extensive preprocessing (rotation, flip, 
-                            zoom, noise injection) to improve model robustness with limited medical data.</li>
+                            <li><strong>CNN Architecture:</strong> Leveraged convolutional neural networks for proven 
+                            effectiveness in image classification, particularly where spatial hierarchies matter.</li>
+                            <li><strong>TensorFlow:</strong> Selected for superior deployment ecosystem and production-grade 
+                            tooling essential for healthcare applications.</li>
+                            <li><strong>Vultr Cloud:</strong> Prioritized low-latency inference over cost, as real-time 
+                            diagnosis is critical in emergency scenarios.</li>
+                            <li><strong>Data Augmentation:</strong> Extensive preprocessing improved model robustness 
+                            with limited medical data.</li>
                         </ul>
-
-                        <h4>Challenges Overcome</h4>
-                        <p>
-                            The biggest challenge was balancing <strong>model accuracy with inference speed</strong>. 
-                            Medical contexts demand both precision and real-time capability. Through model optimization, 
-                            quantization, and efficient preprocessing pipelines, I achieved sub-500ms latency without 
-                            sacrificing the 89% accuracy threshold.
-                        </p>
 
                         <h4>Impact & Learning</h4>
                         <p>
-                            Ranking 35th globally among 6000+ teams validated my approach, but more importantly, 
-                            this project taught me that <strong>AI engineering isn't just about algorithms—it's about 
-                            understanding domain constraints</strong>, optimizing for real-world deployment, and 
-                            maintaining ethical responsibility in high-stakes applications.
+                            Ranking 35th globally validated my approach, but more importantly, this project taught 
+                            me that <strong>AI engineering is about understanding domain constraints</strong>, optimizing 
+                            for real-world deployment, and maintaining ethical responsibility in high-stakes applications.
                         </p>
                     </div>
                 </div>
@@ -1264,47 +1354,34 @@
                         <span class="blog-category">NLP & GenAI</span>
                         <span class="blog-date">November 2024</span>
                     </div>
-                    <h3>Building Privacy-First AI: The Resume Screening Platform Journey</h3>
+                    <h3>Building Privacy-First AI Systems</h3>
                     <p class="blog-excerpt">
                         How I combined semantic search with local LLMs to create a zero-cost, privacy-preserving 
-                        AI recruitment platform that challenges the status quo.
+                        AI recruitment platform.
                     </p>
                     <div class="blog-content">
                         <h4>The Motivation</h4>
                         <p>
-                            Traditional ATS systems rely on keyword matching—a fundamentally flawed approach that 
-                            misses semantic context and penalizes diverse backgrounds. Meanwhile, modern AI solutions 
-                            often compromise user privacy or incur prohibitive API costs. <strong>I set out to prove 
-                            that ethical AI doesn't require trade-offs.</strong>
+                            Traditional ATS systems rely on keyword matching—fundamentally flawed and missing semantic 
+                            context. Modern AI solutions often compromise privacy or incur prohibitive costs. 
+                            <strong>I set out to prove ethical AI doesn't require trade-offs.</strong>
                         </p>
 
                         <h4>Architecture Choices</h4>
                         <ul>
-                            <li><strong>SentenceTransformers:</strong> Leveraged pre-trained models for semantic similarity 
-                            without training overhead, enabling understanding of context beyond keywords.</li>
-                            <li><strong>Local LLaMA-3 via Ollama:</strong> Hosted generative AI locally for resume 
-                            optimization, ensuring zero API costs and complete data privacy—critical for sensitive 
-                            career documents.</li>
-                            <li><strong>Hybrid Ranking System:</strong> Combined semantic similarity scores with skill 
-                            coverage analysis for more nuanced job recommendations than either approach alone.</li>
-                            <li><strong>SQLite:</strong> Chose for simplicity and portability, prioritizing rapid 
-                            iteration over enterprise-scale database complexity.</li>
+                            <li><strong>SentenceTransformers:</strong> Enabled semantic understanding beyond keywords 
+                            without training overhead.</li>
+                            <li><strong>Local LLaMA-3:</strong> Hosted generative AI locally ensuring zero API costs 
+                            and complete data privacy.</li>
+                            <li><strong>Hybrid Ranking:</strong> Combined semantic similarity with skill coverage for 
+                            nuanced recommendations.</li>
                         </ul>
-
-                        <h4>Key Innovations</h4>
-                        <p>
-                            The <strong>skill gap analysis engine</strong> was particularly challenging to implement. 
-                            It required parsing job descriptions, extracting required skills, comparing against candidate 
-                            profiles, and generating actionable recommendations—all while maintaining semantic 
-                            understanding rather than simple string matching.
-                        </p>
 
                         <h4>Why Privacy Matters</h4>
                         <p>
                             Career documents contain deeply personal information. By processing everything locally, 
-                            users maintain complete control of their data. This isn't just a technical decision—it's 
-                            an <strong>ethical stance on how AI should respect user privacy</strong>, especially in 
-                            systems that handle sensitive information.
+                            users maintain complete control. This is an <strong>ethical stance on how AI should 
+                            respect user privacy</strong>, especially with sensitive information.
                         </p>
                     </div>
                 </div>
@@ -1315,46 +1392,34 @@
                         <span class="blog-category">Predictive Analytics</span>
                         <span class="blog-date">December 2024</span>
                     </div>
-                    <h3>From Data to Decisions: Engineering a Churn Prediction System</h3>
+                    <h3>Engineering a Churn Prediction System</h3>
                     <p class="blog-excerpt">
-                        Understanding why customers leave is crucial for business survival. Here's how I built 
-                        an end-to-end ML system that turns data into actionable retention strategies.
+                        Understanding why customers leave is crucial for business survival. Building an end-to-end 
+                        ML system that turns data into actionable retention strategies.
                     </p>
                     <div class="blog-content">
                         <h4>Business Context First</h4>
                         <p>
-                            Customer acquisition costs 5-25x more than retention. For telecom companies with tight 
-                            margins, churn prediction isn't just analytics—it's survival. <strong>I approached this 
-                            as a business problem first, ML problem second.</strong>
+                            Customer acquisition costs 5-25x more than retention. For telecom companies, churn prediction 
+                            isn't just analytics—it's survival. <strong>I approached this as a business problem first, 
+                            ML problem second.</strong>
                         </p>
 
                         <h4>Engineering Decisions</h4>
                         <ul>
-                            <li><strong>XGBoost:</strong> Selected for its superior performance on tabular data and 
-                            built-in feature importance, crucial for business stakeholders who need to understand 
-                            "why" behind predictions.</li>
-                            <li><strong>PostgreSQL ETL:</strong> Designed robust pipelines for multi-source integration 
-                            (customer data, transactions, interactions) because real-world data is never in one place.</li>
-                            <li><strong>Docker Containerization:</strong> Ensured consistent deployment across dev, 
-                            staging, and production environments, reducing setup time by 80%.</li>
-                            <li><strong>SHAP Explainability:</strong> Implemented model interpretability because 
-                            businesses need to understand predictions to take action.</li>
+                            <li><strong>XGBoost:</strong> Superior performance on tabular data with built-in feature 
+                            importance crucial for stakeholder understanding.</li>
+                            <li><strong>PostgreSQL ETL:</strong> Robust pipelines for multi-source integration because 
+                            real-world data is never in one place.</li>
+                            <li><strong>SHAP Explainability:</strong> Businesses need to understand predictions to 
+                            take action.</li>
                         </ul>
-
-                        <h4>The Explainability Challenge</h4>
-                        <p>
-                            Achieving 85%+ ROC-AUC was important, but <strong>explaining predictions to non-technical 
-                            stakeholders was harder than building the model</strong>. SHAP values transformed black-box 
-                            predictions into actionable insights: "This customer is high-risk because of low engagement 
-                            and recent billing issues."
-                        </p>
 
                         <h4>Deployment Lessons</h4>
                         <p>
-                            Real-time prediction APIs need to be fast (~300ms), reliable, and scalable. Through 
-                            performance profiling, database indexing, and efficient model serialization, I optimized 
-                            the full pipeline from data ingestion to prediction delivery. The Streamlit dashboard 
-                            made insights accessible to business teams without technical expertise.
+                            Real-time prediction APIs need speed (~300ms), reliability, and scalability. Through 
+                            performance profiling and optimization, I built a complete pipeline from data ingestion 
+                            to prediction delivery accessible to non-technical teams.
                         </p>
                     </div>
                 </div>
@@ -1362,48 +1427,35 @@
                 <!-- Blog Post 4 -->
                 <div class="blog-card">
                     <div class="blog-meta">
-                        <span class="blog-category">Technical Philosophy</span>
+                        <span class="blog-category">Philosophy</span>
                         <span class="blog-date">January 2025</span>
                     </div>
-                    <h3>My AI/ML Engineering Philosophy: Production Over Perfection</h3>
+                    <h3>Production Over Perfection</h3>
                     <p class="blog-excerpt">
-                        Reflecting on lessons learned across projects and why I prioritize deployable solutions 
-                        over theoretical optimization.
+                        My AI/ML engineering philosophy: why I prioritize deployable solutions over 
+                        theoretical optimization.
                     </p>
                     <div class="blog-content">
                         <h4>Ship It, Then Improve It</h4>
                         <p>
-                            Early in my journey, I spent weeks optimizing models for marginal accuracy gains while 
-                            neglecting deployment. <strong>I learned that a deployed model at 85% accuracy creates 
-                            more value than a 95% accurate model that never ships.</strong>
+                            Early on, I spent weeks optimizing for marginal gains while neglecting deployment. 
+                            <strong>A deployed model at 85% creates more value than 95% accuracy that never ships.</strong>
                         </p>
 
                         <h4>Core Principles</h4>
                         <ul>
-                            <li><strong>Start with the problem, not the algorithm:</strong> Understand business needs 
-                            before choosing ML techniques. Sometimes a simple heuristic beats a complex neural network.</li>
-                            <li><strong>Production constraints are features:</strong> Latency requirements, privacy 
-                            concerns, and cost limitations drive better architectural decisions than unconstrained 
-                            research.</li>
-                            <li><strong>Explainability is not optional:</strong> Stakeholders need to trust and 
-                            understand AI systems. Black boxes may be academically interesting but practically limited.</li>
-                            <li><strong>Local-first when possible:</strong> Cloud services are powerful but introduce 
-                            dependencies, costs, and privacy concerns. Local deployment maximizes control.</li>
+                            <li><strong>Problem First:</strong> Understand business needs before choosing algorithms. 
+                            Sometimes simple heuristics beat complex neural networks.</li>
+                            <li><strong>Production Constraints:</strong> Latency, privacy, and cost drive better 
+                            decisions than unconstrained research.</li>
+                            <li><strong>Explainability Required:</strong> Stakeholders need to trust AI systems. 
+                            Black boxes are academically interesting but practically limited.</li>
                         </ul>
-
-                        <h4>Technical Skills That Matter</h4>
-                        <p>
-                            Beyond ML algorithms, these skills define production-ready AI engineering: <strong>Docker 
-                            for consistent deployment, Flask/FastAPI for serving models, PostgreSQL for data pipelines, 
-                            Git for version control, and cloud platforms for scaling.</strong> Theory is important, 
-                            but engineering discipline turns models into products.
-                        </p>
 
                         <h4>What's Next</h4>
                         <p>
-                            I'm exploring reinforcement learning for dynamic systems, multimodal AI combining vision 
-                            and language, and edge deployment for resource-constrained environments. The goal remains 
-                            constant: <strong>build AI that solves real problems for real people.</strong>
+                            Exploring reinforcement learning, multimodal AI, and edge deployment. The goal remains: 
+                            <strong>build AI that solves real problems for real people.</strong>
                         </p>
                     </div>
                 </div>
@@ -1535,12 +1587,26 @@
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Anurag Tiwari | Engineered with Intelligence & Purpose</p>
+            <p>&copy; 2026 Anurag Tiwari | Crafted with Intelligence & Purpose</p>
         </footer>
     </div>
 
     <script>
-        // Advanced 3D Background with Three.js
+        // Custom Cursors
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+
+        document.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+
+            setTimeout(() => {
+                cursorRing.style.left = e.clientX + 'px';
+                cursorRing.style.top = e.clientY + 'px';
+            }, 80);
+        });
+
+        // 3D Background with Three.js
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({
@@ -1552,9 +1618,9 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
 
-        // Enhanced particle system
+        // Particle system
         const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 5000;
+        const particlesCount = 4000;
         const posArray = new Float32Array(particlesCount * 3);
         const colorArray = new Float32Array(particlesCount * 3);
 
@@ -1563,19 +1629,16 @@
             posArray[i + 1] = (Math.random() - 0.5) * 150;
             posArray[i + 2] = (Math.random() - 0.5) * 150;
 
+            // Deep teal and coral particles
             const colorChoice = Math.random();
-            if (colorChoice < 0.33) {
-                colorArray[i] = 0;
-                colorArray[i + 1] = 0.85;
-                colorArray[i + 2] = 1;
-            } else if (colorChoice < 0.66) {
-                colorArray[i] = 1;
-                colorArray[i + 1] = 0.18;
-                colorArray[i + 2] = 0.59;
+            if (colorChoice < 0.5) {
+                colorArray[i] = 0.18;
+                colorArray[i + 1] = 0.37;
+                colorArray[i + 2] = 0.36;
             } else {
-                colorArray[i] = 0.48;
-                colorArray[i + 1] = 0.18;
-                colorArray[i + 2] = 1;
+                colorArray[i] = 0.91;
+                colorArray[i + 1] = 0.45;
+                colorArray[i + 2] = 0.38;
             }
         }
 
@@ -1583,35 +1646,34 @@
         particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
 
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.15,
+            size: 0.12,
             vertexColors: true,
             transparent: true,
-            opacity: 0.8,
+            opacity: 0.6,
             blending: THREE.AdditiveBlending
         });
 
         const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
         scene.add(particlesMesh);
 
-        // Multiple geometric shapes
+        // Geometric shapes
         const geometries = [
-            new THREE.IcosahedronGeometry(15, 1),
-            new THREE.TorusKnotGeometry(8, 2, 100, 16),
-            new THREE.OctahedronGeometry(12, 0)
+            new THREE.IcosahedronGeometry(12, 0),
+            new THREE.TorusGeometry(10, 3, 16, 100)
         ];
 
         const meshes = geometries.map((geo, index) => {
             const mat = new THREE.MeshBasicMaterial({
-                color: index === 0 ? 0x00D9FF : index === 1 ? 0xFF2E97 : 0x7B2EFF,
+                color: index === 0 ? 0x2D5F5D : 0xE87461,
                 wireframe: true,
                 transparent: true,
-                opacity: 0.08
+                opacity: 0.06
             });
             const mesh = new THREE.Mesh(geo, mat);
             mesh.position.set(
-                (Math.random() - 0.5) * 30,
-                (Math.random() - 0.5) * 30,
-                (Math.random() - 0.5) * 30
+                (Math.random() - 0.5) * 40,
+                (Math.random() - 0.5) * 40,
+                (Math.random() - 0.5) * 40
             );
             scene.add(mesh);
             return mesh;
@@ -1622,28 +1684,10 @@
         // Mouse tracking
         let mouseX = 0;
         let mouseY = 0;
-        let targetX = 0;
-        let targetY = 0;
-
-        // Custom cursors
-        const cursorGlow = document.querySelector('.cursor-glow');
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorRing = document.querySelector('.cursor-ring');
 
         document.addEventListener('mousemove', (e) => {
             mouseX = (e.clientX / window.innerWidth) * 2 - 1;
             mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-
-            cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
-
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-
-            setTimeout(() => {
-                cursorRing.style.left = e.clientX + 'px';
-                cursorRing.style.top = e.clientY + 'px';
-            }, 80);
         });
 
         // Interactive 3D card
@@ -1655,14 +1699,14 @@
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
 
-                visualCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                visualCard.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
 
             visualCard.addEventListener('mouseleave', () => {
-                visualCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                visualCard.style.transform = 'perspective(1500px) rotateX(0) rotateY(0)';
             });
         }
 
@@ -1670,16 +1714,15 @@
         function animate() {
             requestAnimationFrame(animate);
 
-            targetX = mouseX * 20;
-            targetY = mouseY * 20;
+            const targetX = mouseX * 15;
+            const targetY = mouseY * 15;
 
-            particlesMesh.rotation.y += 0.001;
-            particlesMesh.rotation.x += 0.0005;
+            particlesMesh.rotation.y += 0.0008;
+            particlesMesh.rotation.x += 0.0004;
 
             meshes.forEach((mesh, index) => {
-                mesh.rotation.x += 0.003 * (index + 1);
-                mesh.rotation.y += 0.005 * (index + 1);
-                mesh.rotation.z += 0.002 * (index + 1);
+                mesh.rotation.x += 0.002 * (index + 1);
+                mesh.rotation.y += 0.003 * (index + 1);
             });
 
             camera.position.x += (targetX - camera.position.x) * 0.05;
@@ -1712,7 +1755,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-item, .blog-card, .skill-box').forEach(el => {
+        document.querySelectorAll('.project-item, .blog-card, .skill-box, .cert-card').forEach(el => {
             observer.observe(el);
         });
 
